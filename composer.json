@@ -1,0 +1,12 @@
+{
+  "name": "project/app",
+  "autoload": {
+    "files": [
+    ],
+    "psr-4": {
+    }
+  },
+  "require": {
+    "ext-pdo": "*"
+  }
+}
