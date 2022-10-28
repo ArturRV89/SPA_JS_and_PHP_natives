@@ -1,31 +1,25 @@
 <?php
-
 $email = trim($_POST['email']) ?? null;
 $password = trim($_POST['password']) ?? null;
 
 function registration(string $email, string $password): void
 {
-    $responseData = checkExistEnter($email, $password);
-
-    if (!$responseData) {
-
         $userData = registerNewUser($email, $password);
 
         if ($userData) {
-            $responseData[] = [
+            $responseData[0] = [
                 'status' => 1,
                 'message' => 'User successfully registered',
-                'user_email' => $email
             ];
+            $responseData[1] = $userData;
             $_SESSION['user'] = $userData;
-            setcookie("user", $userData['email'], time()+360000);
+//            setcookie("user", $userData['email'], time()+360000);
         } else {
-            $responseData[] = [
+            $responseData[0] = [
                 'status' => 0,
                 'message' => 'Registration error'
             ];
         }
-    }
     print json_encode($responseData);
 }
 
@@ -79,7 +73,7 @@ function registerNewUser(string $email, string $password): array|string
     $records->execute($data);
 
     if ($records) {
-        $sql = "SELECT *
+        $sql = "SELECT `id`, `email`
                 FROM `users`
                 WHERE (`email` = :email)
                 LIMIT 1";

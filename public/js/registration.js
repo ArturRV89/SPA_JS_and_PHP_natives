@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('button.abra').on('click', function () {
+    $('button.register').on('click', function () {
         let email = $('#InputEmail').val();
         let password = $('#InputPassword').val();
 
@@ -10,12 +10,12 @@ $(document).ready(function () {
                 email: email,
                 password: password
             },
-            success: (function () {
+            success: (function (data) {
+                let res = JSON.parse(data);
+                document.cookie = "user_id=" + res[1].id;
+                document.cookie = "user_email=" + res[1].email;
                 window.location = 'http://localhost/general';
             })
         })
-            .done(function (msg) {
-                alert("data saved: " + msg);
-            });
     })
 })

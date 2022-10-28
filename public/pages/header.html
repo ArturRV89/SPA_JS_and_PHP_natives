@@ -19,16 +19,18 @@
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="general" data-menu="general"
-                           data-link="ajax" <?php print ($pageMenu == 'general')?>>General page</a>
-                    </li>
-                    <li class="nav-item">
+                    <div class="general_page">
+                        <li class="nav-item">
+                            <a class="nav-link" href="general" data-menu="general"
+                               data-link="ajax" <?php print ($pageMenu == 'general')?>>General page</a>
+                        </li>
+                    </div>
+                    <li class="nav-item" id="#registration_page">
                         <a class="nav-link" href="registration" data-menu="registration"
                            data-link="ajax" <?php print ($pageMenu == 'registration')?>>Registration</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login" data-menu="login"
+                    <li class="nav-item" id="#login_page">
+                        <a class="nav-link" href="login" data-menu="login" id="login-page"
                            data-link="ajax" <?php print ($pageMenu == 'login')?>>Login</a>
                     </li>
                 </ul>
@@ -41,6 +43,9 @@
         <?php print $content ?>
     </div>
 </div>
+
+<script type="text/javascript" src="../js/checkAuth.js"></script>
 <script type="text/javascript" src="../js/routes.js"></script>
+
 </body>
 </html>

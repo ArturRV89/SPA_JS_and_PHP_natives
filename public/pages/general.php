@@ -1,3 +1,6 @@
+<script>
+
+</script>
 <form method="post">
     <div class="mb-3">
         <input name="sum" type="text" class="form-control" id="inputSum" placeholder="Sum">

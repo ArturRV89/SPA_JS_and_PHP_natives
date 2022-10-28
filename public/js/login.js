@@ -10,12 +10,12 @@ $(document).ready(function () {
                 email: email,
                 password: password
             },
-            success: (function(){
+            success: (function (data) {
+                let res = JSON.parse(data);
+                document.cookie = "user_id=" + res.id;
+                document.cookie = "user_email=" + res.email;
                 window.location = 'http://localhost/general';
             })
         })
-            .done(function (msg) {
-                alert(msg);
-            });
     })
 })

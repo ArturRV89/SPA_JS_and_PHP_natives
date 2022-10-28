@@ -62,7 +62,9 @@ function showAllRecords() {
 }
 
 $(document).ready(function () {
-    $('button.add_rec').on('click', function () {
+    $('button.add_rec').on('click', function (e) {
+        e.stopPropagation();
+        e.preventDefault();
         let sum = $('#inputSum').val();
         let type = $('#inputType').val();
         let comment = $('#inputComment').val();

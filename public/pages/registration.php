@@ -10,7 +10,7 @@
             <input name="password" type="password" class="form-control" id="InputPassword"
                    placeholder="password">
         </div>
-        <button class="abra btn btn-primary">Send</button>
+        <button class="register btn btn-primary">Registration</button>
     </form>
 </div>
 

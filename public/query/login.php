@@ -2,7 +2,7 @@
 $email = trim($_POST['email']) ?? null;
 $password = trim($_POST['password']) ?? null;
 
-function login($email, $password): void
+function login(string $email, string $password)
 {
     $errors = [];
     $checkedEnter = checkExistEnter($email, $password);
@@ -14,19 +14,20 @@ function login($email, $password): void
 
     if (!$checkedEnter && $checkedEmail) {
         if (isset($_SESSION['user'])) {
-            print 'Welcome';
+//            print 'Welcome';
+            print json_encode($checkedEmail);
         } else {
             $_SESSION['user'] = $checkedEmail;
-            print 'Welcome';
+//            print 'Welcome';
+            print json_encode($checkedEmail);
         }
     } else {
         $errors['message'] = 'Data failed validate';
     }
     if (!empty($errors)) {
-        print $errors['message'];
+        print json_encode($errors['message']);
     }
 }
-
 
 function checkExistEnter(string $email, string $password): array
 {
@@ -45,7 +46,7 @@ function checkExistUserEmail(string $email)
 {
     $email = htmlspecialchars($email);
 
-    $sql = "SELECT *
+    $sql = "SELECT `id`, `email`
                 FROM `users` 
                 WHERE (`email` = :email)
                 LIMIT 1";
