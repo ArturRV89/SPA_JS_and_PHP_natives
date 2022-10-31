@@ -9,10 +9,10 @@ services:
         environment:
             - MYSQL_ROOT_PASSWORD=123123
             - MYSQL_DATABASE=spa
-            - MYSQL_USER=spa
+            - MYSQL_USER=root
             - MYSQL_PASSWORD=123123
         ports:
-            - '3304:3306'
+            - '3306:3306'
         container_name: spa_db
 
     webserver:
