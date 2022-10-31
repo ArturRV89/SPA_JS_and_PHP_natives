@@ -4,21 +4,15 @@
     "pages": {
         "general": {
             "title": "General",
-            "menu": "general",
-            "inSitemap": true,
-            "updated": "2022-10-20"
+            "menu": "general"
         },
         "registration": {
             "title": "Registration",
-            "menu": "registration",
-            "inSitemap": true,
-            "updated": "2022-10-20"
+            "menu": "registration"
         },
         "login": {
             "title": "Login",
-            "menu": "login",
-            "inSitemap": true,
-            "updated": "2022-10-20"
+            "menu": "login"
         }
     }
 }

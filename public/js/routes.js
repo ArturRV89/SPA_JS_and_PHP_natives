@@ -18,6 +18,8 @@ var app = (function () {
 
         $.get(url, function (html) {
             document.title = pageTitle + ' | ' + config.siteTitle;
+            ui.$menu.find('a').removeClass('active');
+            ui.$menu.find('a[data-menu="' + menu + '"]').addClass('active');
             ui.$pageTitle.html(pageTitle);
             ui.$content.html(html);
         });

@@ -1,7 +1,7 @@
 $(document).ready(showAllRecords());
 
 function showAllRecords() {
-    fetch('../query/allRec.php')
+    fetch('/query/allRec.php')
         .then((response) => response.json())
         .then((data) => {
             let tBody = document.getElementsByTagName('tbody')[0];
@@ -98,6 +98,7 @@ function sum_all_type() {
         fetch('../query/total.php')
             .then((response) => response.json())
             .then((data) => {
+
                 let coming_sum = (data[0]['coming_sum']);
                 let expenditure_sum = (data[1]['expenditure_sum']);
 

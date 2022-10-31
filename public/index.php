@@ -1,6 +1,8 @@
 <?php
 session_start();
 include_once '../vendor/autoload.php';
+//include_once 'sitemap.php';
+
 // Вытаскиваем конфиг в ассоциативный массив
 $jsonString = file_get_contents(__DIR__ . '/data/config.json');
 $config = json_decode($jsonString, true);
@@ -18,6 +20,8 @@ $siteTitle = $config['siteTitle'];
 
 // Заголовок и меню страницы
 $pageData = $config['pages'][$page];
+$pageData['title'] = 'Welcome';
+$pageData['menu'] = '';
 $pageTitle = $pageData['title'];
 $pageMenu = $pageData['menu'];
 
