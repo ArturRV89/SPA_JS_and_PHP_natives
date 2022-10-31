@@ -14,7 +14,7 @@ $(document).ready(function () {
                 let res = JSON.parse(data);
                 document.cookie = "user_id=" + res[1].id;
                 document.cookie = "user_email=" + res[1].email;
-                window.location = 'http://localhost/general';
+                window.location = '/';
             })
         })
     })
